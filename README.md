@@ -1,3 +1,30 @@
+# Spotify Jamming
+
+## Overview
+Spotify Jamming is a web application that allows users to create and manage playlists on Spotify. Users can search for tracks, add them to a playlist, and then save the playlist to their Spotify account.
+
+## Features
+- Search for tracks: Search the Spotify library for tracks based on keywords.
+- Add tracks to a playlist: Select tracks from the search results to add them to a playlist.
+- Save playlist to Spotify: Save the created playlist to your Spotify account.
+
+## Technologies Used
+- React: Frontend framework for building the user interface.
+- Spotify Web API: Access Spotify's extensive music catalog and manage user playlists.
+- JavaScript: Programming language for implementing application logic.
+- HTML/CSS: Markup and styling for the web application.
+- Git/GitHub: Version control and collaboration platform.
+- Vite - npm create@latest for boilder plate react app and dev enviorment. 
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/spotify-jamming.git
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
