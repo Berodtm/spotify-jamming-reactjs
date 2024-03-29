@@ -20,11 +20,6 @@ Spotify Jamming is a web application that allows users to create and manage play
 1. Clone the repository:
    ```bash
    git clone https://github.com/Berodtm/spotify-jamming.git
-
-
-
-
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
