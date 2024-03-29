@@ -1,12 +1,12 @@
 import React from 'react';
 
 function Track({ id, name, artist, album, onAdd, onRemove, isRemoval }) {
-  // Function to handle adding a track
+ 
   const addTrack = () => {
     if (onAdd) onAdd({ id, name, artist, album });
   };
 
-  // Function to handle removing a track
+ 
   const removeTrack = () => {
     if (onRemove) onRemove(id);
   };

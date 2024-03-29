@@ -1,4 +1,4 @@
-const clientId = 'CLIENT_ID'; // Replace with your actual client ID from Spotify
+const clientId = '_CLIENT_ID_'; // Replace with your actual client ID from Spotify
 const redirectUri = 'http://localhost:3000/callback'; // Make sure this matches the Redirect URI in your Spotify app settings
 const scope = 'playlist-modify-public'; // Adjust the scope according to the permissions you need
 let accessToken;
@@ -51,46 +51,51 @@ const Spotify = {
           return []; // Return an empty array in case of an error
         }
       },
-      async savePlaylist(playlistName, trackUris, setPlaylistName, setPlaylistTracks) {
+      async savePlaylist(playlistName, trackUris) {
         if (!playlistName || !trackUris.length) {
-            return;
+          console.log('Playlist name or tracks are missing.');
+          return;
         }
-    
+      
         const accessToken = this.getAccessToken();
-        const headers = {
-            Authorization: `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
-        };
-    
-        try {
-            const userResponse = await fetch('https://api.spotify.com/v1/me', {
-                headers: headers
-            });
-            const userData = await userResponse.json();
-            const userId = userData.id;
-    
-            const createPlaylistResponse = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify({ name: playlistName })
-            });
-            const playlistData = await createPlaylistResponse.json();
-            const playlistId = playlistData.id;
-    
-            await fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify({ uris: trackUris })
-            });
-    
-            console.log("Playlist saved to Spotify");
-            setPlaylistName("New Playlist");
-            setPlaylistTracks([]);
-        } catch (error) {
-            console.error('Error saving playlist:', error);
-            // Handle error, e.g., display a message to the user
+        if (!accessToken) {
+          console.log('Access Token is missing.');
+          return;
         }
-    },
+      
+        const headers = { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' };
+        
+        try {
+          console.log('trackUris', trackUris);
+          const userResponse = await fetch('https://api.spotify.com/v1/me', { headers });
+          const userData = await userResponse.json();
+          const userId = userData.id;
+      
+          const createPlaylistResponse = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({ name: playlistName })
+          });
+          const playlistData = await createPlaylistResponse.json();
+          const playlistId = playlistData.id;
+      
+          const addTracksResponse = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({ uris: trackUris })
+          });
+      
+          if (!addTracksResponse.ok) {
+            const errorData = await addTracksResponse.json();
+            console.error('Failed to add tracks:', errorData);
+            return;
+          }
+      
+          console.log("Playlist saved to Spotify");
+        } catch (error) {
+          console.error('Error saving playlist:', error);
+        }
+      } 
     // Additional methods for interacting with the Spotify API will go here
   };
   
