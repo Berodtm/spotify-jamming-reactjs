@@ -1,6 +1,11 @@
-const clientId = process.env.REACT_APP_CLIENT_ID; // Use your actual client ID environment variable name
-const redirectUri = process.env.REACT_APP_REDIRECT_URI; // Use your actual Redirect URI environment variable name
+// const clientId = process.env.REACT_APP_CLIENT_ID; // Use your actual client ID environment variable name
+// const redirectUri = process.env.REACT_APP_REDIRECT_URI; // Use your actual Redirect URI environment variable name
+// const scope = 'playlist-modify-public';
+
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 const scope = 'playlist-modify-public';
+
 let accessToken;
 
 const Spotify = {
