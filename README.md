@@ -14,17 +14,12 @@ Spotify Jamming is a web application that allows users to create and manage play
 - JavaScript: Programming language for implementing application logic.
 - HTML/CSS: Markup and styling for the web application.
 - Git/GitHub: Version control and collaboration platform.
-- Vite - npm create@latest for boilder plate react app and dev enviorment. 
+- Vite - npm create Vite@latest for boilder plate react app and dev enviorment. 
 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/spotify-jamming.git
-
-
-
-
-
+   git clone https://github.com/Berodtm/spotify-jamming.git
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
