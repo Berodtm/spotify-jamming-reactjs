@@ -45,6 +45,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-left: 10px;
 }
 button:hover {
   border-color: #646cff;
@@ -64,5 +65,19 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  
   }
+}
+input {
+  height: 30px; 
+  margin: 5px;
+  width: 182px;
+}
+
+.playlist-name-input {
+  width: 100%;
+}
+
+.SearchBar, .playlist { 
+  width: 300px;
 }
