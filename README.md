@@ -80,5 +80,4 @@ Update `spotify.js` to correctly handle environment variables for Spotify's Clie
 - **SPA Routing on Netlify**: Use a `_redirects` file with `/* /index.html 200` for correct route handling.
 - **Testing**: Test changes both locally and in the deployed environment.
 
-This guide emphasizes the importance of managing settings across development and production environments, using Git for version control, and leveraging Netlify for continuous deployment.
 
