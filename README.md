@@ -38,10 +38,10 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/Berodtm/spotify-jamming.git
+git remote add origin https://github.com/Berodtm/spotify-jamming-reactjs.git
 git push -u origin main
 
-git remote add origin https://github.com/Berodtm/spotify-jamming.git
+git remote add origin https://github.com/Berodtm/spotify-jamming-reactjs.git
 git branch -M main
 git push -u origin main
 
